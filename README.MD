@@ -44,7 +44,7 @@ No modules.
 
 ``` 
 module "vpc" {
-  source          = "git::https://github.com/hurbcom/terraform-modules.git//vpc"
+  source          = "git::git@github.com:mauriciopgomes/terraform-module-gcp-vpc.git.git"
   region          = "us-east1"
   env             = "production"
   gcp_project     = "mauricio-project"

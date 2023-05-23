@@ -6,8 +6,13 @@ resource "google_compute_subnetwork" "gke" {
   network                  = google_compute_network.this.id
   private_ip_google_access = true
   project                  = var.gcp_project
-  secondary_ip_range {
+  secondary_ip_range [{
     range_name    = "gke-pods"
     ip_cidr_range = var.gke_ip_cidr[1]
-  }
+  },
+  {
+    range_name    = "gke-service"
+    ip_cidr_range = var.gke_ip_cidr[2]
+  },
+  ]
 }
